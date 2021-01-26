@@ -21,6 +21,11 @@ const HtmlHead = ({ db }) => {
       <meta property="og:image:height" content="442" />
       <meta property="og:type" content="website" />
       <link rel="shortcut icon" href={db.icon} />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"
+        rel="stylesheet"
+      ></link>
     </Head>
   );
 };

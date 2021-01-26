@@ -13,13 +13,19 @@ import { useRouter } from 'next/router';
 import Head from '../src/components/Head';
 
 const QuizContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  height: 100vh;
+  justify-content: center;
   max-width: 350px;
-  /* padding-top: 45px; */
-  margin: auto 10%;
+  margin: 0 10%;
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
+  }
+  svg {
+    margin: 0;
   }
 `;
 
@@ -48,6 +54,7 @@ const Home = () => {
       <Head db={{ ...db }} />
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
+          <QuizLogo />
           <Widget>
             <Widget.Header>
               <h1>Silvio & Faustão</h1>

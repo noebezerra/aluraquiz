@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${({ theme }) => theme.colors.contrastText}
   }
   html, body {
@@ -21,9 +21,25 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+  :root {
+    font-size: 16px;
+  }
   a {
     text-decoration: none;
     color: currentColor;
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.125;
+    font-weight: lighter;
   }
 `;
 
