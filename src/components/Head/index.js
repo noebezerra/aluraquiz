@@ -17,8 +17,8 @@ const HtmlHead = ({ db }) => {
       <meta property="og:description" content={db.description} />
       <meta property="og:image" content={db.bg} />
       <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="1366" />
-      <meta property="og:image:height" content="768" />
+      <meta property="og:image:width" content="640" />
+      <meta property="og:image:height" content="442" />
       <meta property="og:type" content="website" />
       <link rel="shortcut icon" href={db.icon} />
     </Head>
