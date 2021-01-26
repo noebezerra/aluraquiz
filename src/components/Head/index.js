@@ -15,7 +15,7 @@ const HtmlHead = ({ db }) => {
       <meta property="og:title" content={db.title} />
       <meta property="og:site_name" content={db.title} />
       <meta property="og:description" content={db.description} />
-      <meta property="og:image" content={db.bg} />
+      <meta property="og:image" content={db.bgUrl} />
       <meta property="og:image:type" content="image/jpg" />
       <meta property="og:image:width" content="640" />
       <meta property="og:image:height" content="442" />

@@ -1,5 +1,6 @@
 {
   "bg": "img/bg.jpg",
+  "bgUrl": "https://aluraquiz-show.noebezerra.vercel.app/img/bg.jpg",
   "title": "Quiz Show do Milhão",
   "description": "Quiz Show do Milhão com Silvio e Faustão | Má oi!",
   "icon": "img/coin.ico",
