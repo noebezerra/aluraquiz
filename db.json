@@ -1,7 +1,8 @@
 {
   "bg": "img/bg.png",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "Quiz Show do Milhão",
+  "description": "Quiz Show do Milhão com Silvio e Faustão | Má oi!",
+  "icon": "img/coin.ico",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",

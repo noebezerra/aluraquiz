@@ -10,6 +10,7 @@ import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Head from '../src/components/Head';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -43,30 +44,36 @@ const Home = () => {
   }, [play]);
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <Widget>
-          <Widget.Header>
-            <h1>Silvio & Faustão</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>Má oi! Teste os seus conhecimentos com a gente. Vem pra cá!</p>
-            <p>Ô loco, bixo! Brincadeira! Esta fera ai, meu!</p>
-            <Input placeholder="Vem pra cá! Qual o seu nome?" />
-            <Button onClick={handleClick}>Jogar</Button>
-            <audio id="ajogar" src="../sound/perguntashowdomilhao.mp3"></audio>
-          </Widget.Content>
-        </Widget>
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da galera</h1>
-            <p>Em breve</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/noebezerra" />
-    </QuizBackground>
+    <>
+      <Head db={{ ...db }} />
+      <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
+          <Widget>
+            <Widget.Header>
+              <h1>Silvio & Faustão</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>Má oi! Teste os seus conhecimentos com a gente. Vem pra cá!</p>
+              <p>Ô loco, bixo! Brincadeira! Esta fera ai, meu!</p>
+              <Input placeholder="Vem pra cá! Qual o seu nome?" />
+              <Button onClick={handleClick}>Jogar</Button>
+              <audio
+                id="ajogar"
+                src="../sound/perguntashowdomilhao.mp3"
+              ></audio>
+            </Widget.Content>
+          </Widget>
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da galera</h1>
+              <p>Em breve</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/noebezerra" />
+      </QuizBackground>
+    </>
   );
 };
 
