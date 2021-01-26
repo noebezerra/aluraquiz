@@ -1,5 +1,5 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import db from "../db.json";
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     flex: 1;
     display: flex;
     flex-direction: column;
+  }
+  a {
+    text-decoration: none;
+    color: currentColor;
   }
 `;
 
