@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
@@ -8,8 +9,6 @@ import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import Head from '../src/components/Head';
 
 const QuizContainer = styled.div`
@@ -32,15 +31,18 @@ const QuizContainer = styled.div`
 const Home = () => {
   const router = useRouter();
   const [play, setPlay] = React.useState(false);
-  const [time, setTime] = React.useState(false);
+  const [time, setTime] = React.useState(null);
+  const [nome, setNome] = React.useState('');
 
-  async function handleClick() {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!nome) return;
     if (time) clearTimeout(time);
     setPlay(true);
-    const time = setTimeout(() => {
-      router.push('/quiz');
+    let timeOut = setTimeout(() => {
+      router.push({ pathname: '/quiz', query: { nome } });
     }, 2500);
-    setTime(time);
+    setTime(timeOut);
   }
 
   React.useEffect(() => {
@@ -62,8 +64,13 @@ const Home = () => {
             <Widget.Content>
               <p>Má oi! Teste os seus conhecimentos com a gente. Vem pra cá!</p>
               <p>Ô loco, bixo! Brincadeira! Esta fera ai, meu!</p>
-              <Input placeholder="Vem pra cá! Qual o seu nome?" />
-              <Button onClick={handleClick}>Jogar</Button>
+              <form onSubmit={handleSubmit}>
+                <Input
+                  placeholder="Vem pra cá! Qual o seu nome?"
+                  onChange={({ target }) => setNome(target.value)}
+                />
+                {nome && <Button type="submit">Jogar</Button>}
+              </form>
               <audio
                 id="ajogar"
                 src="../sound/perguntashowdomilhao.mp3"

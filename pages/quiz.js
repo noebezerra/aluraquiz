@@ -1,6 +1,10 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const Quiz = () => {
+const Quiz = ({ query }) => {
+  const router = useRouter();
+  const { nome } = router.query;
+
   return (
     <div
       style={{
@@ -12,7 +16,7 @@ const Quiz = () => {
         color: 'black',
       }}
     >
-      <h1>Quiz</h1>
+      <h1>Olá {nome}</h1>
       <Link href="/">Click aqui para voltar</Link>
     </div>
   );
