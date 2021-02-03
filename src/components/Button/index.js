@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
   width: 100%;
@@ -19,5 +20,10 @@ const Button = styled.button`
     opacity: 93%;
   }
 `;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['submit', 'button', 'type']).isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;

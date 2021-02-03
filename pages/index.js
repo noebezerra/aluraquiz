@@ -30,26 +30,13 @@ const QuizContainer = styled.div`
 
 const Home = () => {
   const router = useRouter();
-  const [play, setPlay] = React.useState(false);
-  const [time, setTime] = React.useState(null);
   const [nome, setNome] = React.useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (!nome) return;
-    if (time) clearTimeout(time);
-    setPlay(true);
-    let timeOut = setTimeout(() => {
-      router.push({ pathname: '/quiz', query: { nome } });
-    }, 2500);
-    setTime(timeOut);
+    router.push({ pathname: '/quiz', query: { nome } });
   }
-
-  React.useEffect(() => {
-    const ajogar = document.getElementById('ajogar');
-    if (play) ajogar.play();
-    setPlay(false);
-  }, [play]);
 
   return (
     <>
@@ -66,15 +53,18 @@ const Home = () => {
               <p>Ô loco, bixo! Brincadeira! Esta fera ai, meu!</p>
               <form onSubmit={handleSubmit}>
                 <Input
+                  type="text"
                   placeholder="Vem pra cá! Qual o seu nome?"
                   onChange={({ target }) => setNome(target.value)}
+                  name="nome"
+                  value={nome}
                 />
-                {nome && <Button type="submit">Jogar</Button>}
+                {nome && (
+                  <Button type="submit" disabled={!nome.length}>
+                    Jogar
+                  </Button>
+                )}
               </form>
-              <audio
-                id="ajogar"
-                src="../sound/perguntashowdomilhao.mp3"
-              ></audio>
             </Widget.Content>
           </Widget>
           <Widget>
